@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10. Sınıf Coğrafya - Coğrafi Bakış (5 Bölümlü Oyun)</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #2980b9;
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --correct: #27ae60;
+      --wrong: #c0392b;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: var(--bg);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .level-block {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .level-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .level-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .level-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .game-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .column-title {
+      font-weight: 600;
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .draggable {
+      background: var(--accent);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: grab;
+      user-select: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      touch-action: none;
+    }
+
+    .draggable:active {
+      cursor: grabbing;
+    }
+
+    .draggable.dragging {
+      opacity: 0.4;
+    }
+
+    .dropzone {
+      background: var(--bg);
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .dropzone.hovered {
+      background: #e0f2fe;
+      border-color: var(--accent);
+    }
+
+    .dropzone-text {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.3;
+    }
+
+    .btn-check {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-check:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .correct {
+      border: 2px solid var(--correct) !important;
+      background: #f0fdf4 !important;
+    }
+
+    .wrong {
+      border: 2px solid var(--wrong) !important;
+      background: #fef2f2 !important;
+    }
+
+    .section-divider {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+      text-align: center;
+      margin: 30px 0;
+      letter-spacing: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>10. Sınıf Coğrafya: Coğrafi Bakış</h1>
+  <div class="subtitle">Kavramları uygun açıklama kutularına sürükleyip eşleştirin.</div>
+
+  <!-- BÖLÜM 1 -->
+  <div class="level-block" id="level-1">
+    <div class="level-header">
+      <div class="level-title">1. Bölüm: Temel Coğrafi Prensipler (Kolay)</div>
+      <div class="level-desc">Coğrafyanın 3 temel ilkesi ve temel ortam alanları.</div>
+    </div>
+    <div class="game-container">
+      <div class="column source">
+        <div class="column-title">Kavramlar</div>
+        <div class="draggable" draggable="true" data-match="l1-1">Dağılış İlkesi</div>
+        <div class="draggable" draggable="true" data-match="l1-2">Neden-Sonuç İlkesi</div>
+        <div class="draggable" draggable="true" data-match="l1-3">Karşılıklı İlgi İlkesi</div>
+        <div class="draggable" draggable="true" data-match="l1-4">Atmosfer</div>
+        <div class="draggable" draggable="true" data-match="l1-5">Litosfer</div>
+        <div class="draggable" draggable="true" data-match="l1-6">Biosfer</div>
+      </div>
+      <div class="column target">
+        <div class="column-title">Açıklamalar</div>
+        <div class="dropzone" data-accept="l1-1"><span class="dropzone-text">Coğrafi olayların mekandaki yayılışını ve konumunu inceleyen temel ilke.</span></div>
+        <div class="dropzone" data-accept="l1-2"><span class="dropzone-text">Coğrafi olayların gerekçelerini ve doğurduğu neticeleri inceleyen ilke.</span></div>
+        <div class="dropzone" data-accept="l1-3"><span class="dropzone-text">Coğrafi unsurların birbiriyle olan etkileşimini ve bağını inceleyen ilke.</span></div>
+        <div class="dropzone" data-accept="l1-4"><span class="dropzone-text">Dünyayı çevreleyen gaz küre, hava katmanı.</span></div>
+        <div class="dropzone" data-accept="l1-5"><span class="dropzone-text">Dünyanın katılaşmış dış kabuğu, taş küre.</span></div>
+        <div class="dropzone" data-accept="l1-6"><span class="dropzone-text">Canlıların yaşamını sürdürdüğü canlılar küresi.</span></div>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkLevel('level-1')">1. Bölümü Kontrol Et</button>
+    <div class="result" id="res-level-1"></div>
+  </div>
+
+  <div class="section-divider">°°°-°°°</div>
+
+  <!-- BÖLÜM 2 -->
+  <div class="level-block" id="level-2">
+    <div class="level-header">
+      <div class="level-title">2. Bölüm: Fiziki Coğrafyanın Alt Dalları (Orta-Alt)</div>
+      <div class="level-desc">Doğal sistemleri inceleyen coğrafya alt bilim dalları.</div>
+    </div>
+    <div class="game-container">
+      <div class="column source">
+        <div class="column-title">Kavramlar</div>
+        <div class="draggable" draggable="true" data-match="l2-1">Jeomorfoloji</div>
+        <div class="draggable" draggable="true" data-match="l2-2">Klimatoloji</div>
+        <div class="draggable" draggable="true" data-match="l2-3">Hidroğrafya</div>
+        <div class="draggable" draggable="true" data-match="l2-4">Biyocoğrafya</div>
+        <div class="draggable" draggable="true" data-match="l2-5">Kartografya</div>
+        <div class="draggable" draggable="true" data-match="l2-6">Pedoloji</div>
+      </div>
+      <div class="column target">
+        <div class="column-title">Açıklamalar</div>
+        <div class="dropzone" data-accept="l2-1"><span class="dropzone-text">Yeryüzü şekillerinin oluşumunu ve gelişimini inceleyen bilim dalı.</span></div>
+        <div class="dropzone" data-accept="l2-2"><span class="dropzone-text">Geniş alanlarda uzun yıllar boyunca gerçekleşen iklim olaylarını inceler.</span></div>
+        <div class="dropzone" data-accept="l2-3"><span class="dropzone-text">Yeraltı ve yerüstü sularını (nehir, göl, deniz) inceleyen bilim.</span></div>
+        <div class="dropzone" data-accept="l2-4"><span class="dropzone-text">Bitki ve hayvan topluluklarının yeryüzündeki dağılışını inceler.</span></div>
+        <div class="dropzone" data-accept="l2-5"><span class="dropzone-text">Harita ve harita benzeri gösterimleri hazırlama bilimi.</span></div>
+        <div class="dropzone" data-accept="l2-6"><span class="dropzone-text">Fiziki coğrafyaya yardımcı olan toprak bilimi.</span></div>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkLevel('level-2')">2. Bölümü Kontrol Et</button>
+    <div class="result" id="res-level-2"></div>
+  </div>
+
+  <div class="section-divider">°°°-°°°</div>
+
+  <!-- BÖLÜM 3 -->
+  <div class="level-block" id="level-3">
+    <div class="level-header">
+      <div class="level-title">3. Bölüm: Beşerî Coğrafyanın Alt Dalları (Orta)</div>
+      <div class="level-desc">İnsan faaliyetlerini ve mekanla ilişkisini inceleyen alt dallar.</div>
+    </div>
+    <div class="game-container">
+      <div class="column source">
+        <div class="column-title">Kavramlar</div>
+        <div class="draggable" draggable="true" data-match="l3-1">Nüfus Coğrafyası</div>
+        <div class="draggable" draggable="true" data-match="l3-2">Yerleşme Coğrafyası</div>
+        <div class="draggable" draggable="true" data-match="l3-3">Ekonomik Coğrafya</div>
+        <div class="draggable" draggable="true" data-match="l3-4">Siyasi Coğrafya</div>
+        <div class="draggable" draggable="true" data-match="l3-5">Tarihî Coğrafya</div>
+        <div class="draggable" draggable="true" data-match="l3-6">Ulaşım Coğrafyası</div>
+      </div>
+      <div class="column target">
+        <div class="column-title">Açıklamalar</div>
+        <div class="dropzone" data-accept="l3-1"><span class="dropzone-text">Demografik yapıyı, göçleri ve nüfusun mekânsal dağılışını inceler.</span></div>
+        <div class="dropzone" data-accept="l3-2"><span class="dropzone-text">Mesken tiplerini, kır ve kent yerleşmelerinin dokusunu inceler.</span></div>
+        <div class="dropzone" data-accept="l3-3"><span class="dropzone-text">Tarım, sanayi, ticaret ve turizm gibi insan faaliyetlerini inceler.</span></div>
+        <div class="dropzone" data-accept="l3-4"><span class="dropzone-text">Devletlerin jeopolitik konumunu ve mekânsal sınırlarını inceler.</span></div>
+        <div class="dropzone" data-accept="l3-5"><span class="dropzone-text">Geçmiş dönemlerdeki mekânsal organizasyonları inceleyen dal.</span></div>
+        <div class="dropzone" data-accept="l3-6"><span class="dropzone-text">Karayolu, demiryolu ve denizyolu hatlarının mekanla bağını inceler.</span></div>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkLevel('level-3')">3. Bölümü Kontrol Et</button>
+    <div class="result" id="res-level-3"></div>
+  </div>
+
+  <div class="section-divider">°°°-°°°</div>
+
+  <!-- BÖLÜM 4 -->
+  <div class="level-block" id="level-4">
+    <div class="level-header">
+      <div class="level-title">4. Bölüm: Doğa ve İnsan Etkileşimi Türleri (Zor)</div>
+      <div class="level-desc">Doğanın insana ve insanın doğaya olan detaylı etkileri.</div>
+    </div>
+    <div class="game-container">
+      <div class="column source">
+        <div class="column-title">Örnek Durumlar</div>
+        <div class="draggable" draggable="true" data-match="l4-1">Doğanın İnsana Etkisi</div>
+        <div class="draggable" draggable="true" data-match="l4-2">İnsanın Doğaya Etkisi</div>
+        <div class="draggable" draggable="true" data-match="l4-3">Karşılıklı İletişim / Uyum</div>
+        <div class="draggable" draggable="true" data-match="l4-4">Doğal Afet Etkisi</div>
+        <div class="draggable" draggable="true" data-match="l4-5">Arazi Kullanımı Değişimi</div>
+        <div class="draggable" draggable="true" data-match="l4-6">Sürdürülebilir Yaklaşım</div>
+        <div class="draggable" draggable="true" data-match="l4-7">Teknolojik Müdahale</div>
+        <div class="draggable" draggable="true" data-match="l4-8">Ekolojik Denge Bozulması</div>
+      </div>
+      <div class="column target">
+        <div class="column-title">Eşleşen Tanımlar</div>
+        <div class="dropzone" data-accept="l4-1"><span class="dropzone-text">Soğuk iklim bölgelerinde insanların kalın giysiler tercih etmesi.</span></div>
+        <div class="dropzone" data-accept="l4-2"><span class="dropzone-text">Akarsu üzerine baraj yapılarak su seviyesinin değiştirilmesi.</span></div>
+        <div class="dropzone" data-accept="l4-3"><span class="dropzone-text">Sert kış şartlarına sahip bölgelerde korunaklı mesken inşa edilmesi.</span></div>
+        <div class="dropzone" data-accept="l4-4"><span class="dropzone-text">Deprem sonucu yerleşim yerlerinin yıkılması ve göç yaşanması.</span></div>
+        <div class="dropzone" data-accept="l4-5"><span class="dropzone-text">Ormanlık alanların kesilerek tarım arazisine dönüştürülmesi.</span></div>
+        <div class="dropzone" data-accept="l4-6"><span class="dropzone-text">Rüzgar ve güneş enerjisi kullanarak doğayı koruyan üretim yapmak.</span></div>
+        <div class="dropzone" data-accept="l4-7"><span class="dropzone-text">Deniz doldurularak havalimanı veya otoyol inşa edilmesi.</span></div>
+        <div class="dropzone" data-accept="l4-8"><span class="dropzone-text">Sanayi atıklarının akarsulara dökülüp canlı türlerini yok etmesi.</span></div>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkLevel('level-4')">4. Bölümü Kontrol Et</button>
+    <div class="result" id="res-level-4"></div>
+  </div>
+
+  <div class="section-divider">°°°-°°°</div>
+
+  <!-- BÖLÜM 5 -->
+  <div class="level-block" id="level-5">
+    <div class="level-header">
+      <div class="level-title">5. Bölüm: İleri Düzey Metodoloji ve Jeopolitik Bakış (Çok Zor)</div>
+      <div class="level-desc">Coğrafi bakışın metodolojik ve stratejik boyutları.</div>
+    </div>
+    <div class="game-container">
+      <div class="column source">
+        <div class="column-title">İleri Kavramlar</div>
+        <div class="draggable" draggable="true" data-match="l5-1">Mekânsal Analiz</div>
+        <div class="draggable" draggable="true" data-match="l5-2">Jeopolitik Bakış</div>
+        <div class="draggable" draggable="true" data-match="l5-3">Mekânsal Sentez</div>
+        <div class="draggable" draggable="true" data-match="l5-4">Ekosistem Yaklaşımı</div>
+        <div class="draggable" draggable="true" data-match="l5-5">Mekânsal Zamansallık</div>
+        <div class="draggable" draggable="true" data-match="l5-6">Kültürel Peyzaj</div>
+        <div class="draggable" draggable="true" data-match="l5-7">Süreç Analizi</div>
+        <div class="draggable" draggable="true" data-match="l5-8">Jeostratejik Önem</div>
+      </div>
+      <div class="column target">
+        <div class="column-title">Akademik Tanımlar</div>
+        <div class="dropzone" data-accept="l5-1"><span class="dropzone-text">Coğrafi verilerin konum bazlı katmanlar halinde incelenip değerlendirilmesi.</span></div>
+        <div class="dropzone" data-accept="l5-2"><span class="dropzone-text">Bir ülkenin coğrafi konumunun uluslararası siyasete olan etkisini inceleme.</span></div>
+        <div class="dropzone" data-accept="l5-3"><span class="dropzone-text">Fiziki ve beşerî unsurların bir bölgede oluşturduğu bütüncül tabloyu çıkarma.</span></div>
+        <div class="dropzone" data-accept="l5-4"><span class="dropzone-text">Canlı ve cansız çevrenin madde döngüleri çerçevesinde incelenmesi.</span></div>
+        <div class="dropzone" data-accept="l5-5"><span class="dropzone-text">Mekanın ve üzerindeki unsurların zaman içerisindeki değişimini ele alma.</span></div>
+        <div class="dropzone" data-accept="l5-6"><span class="dropzone-text">Doğal çevrenin insan kültürü ve faaliyetiyle değişime uğramış son hali.</span></div>
+        <div class="dropzone" data-accept="l5-7"><span class="dropzone-text">Coğrafi bir olayın başından sonuna kadar geçtiği evreleri inceleme.</span></div>
+        <div class="dropzone" data-accept="l5-8"><span class="dropzone-text">Mekan kontrolünün küresel veya bölgesel askeri/politik avantaj sağlaması.</span></div>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkLevel('level-5')">5. Bölümü Kontrol Et</button>
+    <div class="result" id="res-level-5"></div>
+  </div>
+
+  <script>
+    let activeDraggable = null;
+
+    // Sürükle-Bırak Event Mantığı (Masaüstü ve Dokunmatik Destekli)
+    function setupDragAndDrop() {
+      const draggables = document.querySelectorAll('.draggable');
+      const dropzones = document.querySelectorAll('.dropzone');
+
+      draggables.forEach(item => {
+        // Masaüstü Drag Events
+        item.addEventListener('dragstart', (e) => {
+          item.classList.add('dragging');
+          activeDraggable = item;
+        });
+
+        item.addEventListener('dragend', () => {
+          item.classList.remove('dragging');
+          activeDraggable = null;
+        });
+
+        // Mobil Touch Events
+        item.addEventListener('touchstart', (e) => {
+          item.classList.add('dragging');
+          activeDraggable = item;
+        }, { passive: true });
+
+        item.addEventListener('touchend', (e) => {
+          item.classList.remove('dragging');
+          const touch = e.changedTouches[0];
+          const targetEl = document.elementFromPoint(touch.clientX, touch.clientY);
+          const zone = targetEl ? targetEl.closest('.dropzone') : null;
+          
+          if (zone && activeDraggable) {
+            zone.appendChild(activeDraggable);
+          }
+          activeDraggable = null;
+        });
+      });
+
+      dropzones.forEach(zone => {
+        zone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          zone.classList.add('hovered');
+        });
+
+        zone.addEventListener('dragleave', () => {
+          zone.classList.remove('hovered');
+        });
+
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          zone.classList.remove('hovered');
+          if (activeDraggable) {
+            zone.appendChild(activeDraggable);
+          }
+        });
+      });
+    }
+
+    // Bölüm Bazlı Kontrol Fonksiyonu
+    function checkLevel(levelId) {
+      const levelEl = document.getElementById(levelId);
+      const dropzones = levelEl.querySelectorAll('.dropzone');
+      let correct = 0;
+      let total = dropzones.length;
+
+      dropzones.forEach(zone => {
+        const expected = zone.getAttribute('data-accept');
+        const child = zone.querySelector('.draggable');
+
+        zone.classList.remove('correct', 'wrong');
+
+        if (child) {
+          const match = child.getAttribute('data-match');
+          if (match === expected) {
+            zone.classList.add('correct');
+            correct++;
+          } else {
+            zone.classList.add('wrong');
+          }
+        } else {
+          zone.classList.add('wrong');
+        }
+      });
+
+      const resEl = document.getElementById(`res-${levelId}`);
+      resEl.textContent = `Skor: ${total} sorudan ${correct} tanesi doğru!`;
+      resEl.style.color = correct === total ? '#27ae60' : '#c0392b';
+    }
+
+    document.addEventListener('DOMContentLoaded', setupDragAndDrop);
+  </script>
+</body>
+</html>
